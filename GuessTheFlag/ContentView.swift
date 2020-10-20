@@ -10,6 +10,13 @@ import SwiftUI
 struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
         .shuffled()
+    @State private var gradients = [
+        Gradient(colors: [.green, .accentColor, .white]),
+        Gradient(colors: [.red, .accentColor, .white]),
+        Gradient(colors: [.purple, .accentColor, .white]),
+        Gradient(colors: [.blue, .gray, .white]),
+        Gradient(colors: [.orange, .accentColor, .white])
+    ].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var tappedNumber = 0
     @State private var showingScore = false
@@ -18,13 +25,14 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             LinearGradient(
-                gradient: Gradient(colors: [.blue, .white]),
+                gradient: gradients[0],
                 startPoint: .top,
                 endPoint: .bottom
             )
                 .ignoresSafeArea()
-            VStack(spacing: 30) {
-                VStack {
+            VStack {
+                Spacer()
+                VStack(spacing: 5) {
                     Text("Tap the flag of")
                     Text(countries[correctAnswer])
                         .font(.largeTitle)
@@ -32,24 +40,24 @@ struct ContentView: View {
                 }
                 .foregroundColor(.white)
                 Spacer()
-                ForEach(0 ..< 3) { number in
-                    Button(action: {
-                        self.flagTapped(number)
-                    }, label: {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
-                    })
+                VStack(spacing: 80) {
+                    ForEach(0 ..< 3) { number in
+                        FlagButton(
+                            number: number,
+                            countries: $countries,
+                            gradients: $gradients,
+                            correctAnswer: $correctAnswer,
+                            tappedNumber: $tappedNumber,
+                            showingScore: $showingScore,
+                            score: $score
+                            )
+                    }
                 }
                 Spacer()
-                Spacer()
-                Spacer()
                 HStack {
-                    Text("My Score : \(score)")
+                    Text("Score : \(score)")
                         .font(.title2)
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(.gray)
                         .fontWeight(.heavy)
                     Spacer()
                     Button(action: {
@@ -77,19 +85,9 @@ struct ContentView: View {
         }
     }
     
-    func flagTapped(_ number: Int) {
-        if number == correctAnswer {
-            score += 1
-            self.askQuestion()
-        } else {
-            showingScore = true
-            tappedNumber = number
-            score -= 1
-        }
-    }
-    
     func askQuestion() {
         countries = countries.shuffled()
+        gradients = gradients.shuffled()
         correctAnswer = Int.random(in: 0...2)
     }
     
