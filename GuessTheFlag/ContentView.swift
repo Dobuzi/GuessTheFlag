@@ -18,8 +18,7 @@ struct ContentView: View {
         Gradient(colors: [.orange, .accentColor, .white])
     ].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
-    @State private var tappedNumber = 0
-    @State private var showingScore = false
+    @State private var tappedNumber = 99
     @State private var score = 0
     
     var body: some View {
@@ -48,7 +47,6 @@ struct ContentView: View {
                             gradients: $gradients,
                             correctAnswer: $correctAnswer,
                             tappedNumber: $tappedNumber,
-                            showingScore: $showingScore,
                             score: $score
                             )
                     }
@@ -73,15 +71,6 @@ struct ContentView: View {
                 }
                 .padding(50)
             }
-        }
-        .alert(isPresented: $showingScore) {
-            Alert(
-                title: Text("Wrong"),
-                message: Text("That's the flag of \(self.countries[tappedNumber])"),
-                dismissButton: .default(Text("Continue"))
-             {
-                self.askQuestion()
-            })
         }
     }
     
