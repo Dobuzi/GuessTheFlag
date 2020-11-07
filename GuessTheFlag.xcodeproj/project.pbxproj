@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DA96F25253D436700E0FD99 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA96F24253D436700E0FD99 /* GridView.swift */; };
+		4DAB9BEC2556D7670091A662 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAB9BEB2556D7670091A662 /* Accessibility.swift */; };
 		4DE3BB75253AD13000D9A5A8 /* GuessTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3BB74253AD13000D9A5A8 /* GuessTheFlagApp.swift */; };
 		4DE3BB77253AD13000D9A5A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3BB76253AD13000D9A5A8 /* ContentView.swift */; };
 		4DE3BB79253AD13200D9A5A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3BB78253AD13200D9A5A8 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		4DA96F24253D436700E0FD99 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		4DAB9BEB2556D7670091A662 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
 		4DE3BB71253AD13000D9A5A8 /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE3BB74253AD13000D9A5A8 /* GuessTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagApp.swift; sourceTree = "<group>"; };
 		4DE3BB76253AD13000D9A5A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				4DE3BB7A253AD13200D9A5A8 /* Preview Content */,
 				4DE3BBDC253C7E2000D9A5A8 /* FlagButton.swift */,
 				4DA96F24253D436700E0FD99 /* GridView.swift */,
+				4DAB9BEB2556D7670091A662 /* Accessibility.swift */,
 			);
 			path = GuessTheFlag;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				4DA96F25253D436700E0FD99 /* GridView.swift in Sources */,
 				4DE3BB77253AD13000D9A5A8 /* ContentView.swift in Sources */,
+				4DAB9BEC2556D7670091A662 /* Accessibility.swift in Sources */,
 				4DE3BBDD253C7E2000D9A5A8 /* FlagButton.swift in Sources */,
 				4DE3BB75253AD13000D9A5A8 /* GuessTheFlagApp.swift in Sources */,
 			);

@@ -29,6 +29,7 @@ struct FlagButton: View {
                 Image(self.countries[number])
                     .renderingMode(.original)
                     .flagStyle()
+                    .accessibility(label: Text(labels[self.countries[number], default: "Unknown flag"]))
                 Text(isWrong ? self.countries[number] : "")
                     .frame(width:200, height: 100)
                     .background(isWrong ? Color.black.opacity(0.75) : nil)
